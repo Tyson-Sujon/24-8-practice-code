@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tour of DOM </title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<style>
+    h1 {
+        color: gold;
+    }
+
+    #food-title {
+        color: green;
+    }
+
+    .bg-color {
+        background-color: rebeccapurple;
+    }
+
+    .bold {
+        font-weight: 900;
+    }
+
+    .big {
+        font-size: 3em;
+    }
+
+    .food .foreign {
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>this is my header no banner</h1>
+    </header>
+    <main id="main-container">
+        <div>
+            <h1> started to get all tag list</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa minima molestiae obcaecati voluptatibus
+                perspiciatis beatae facere magnam maiores quis illo culpa officiis, enim ex quos voluptate nulla officia
+                suscipit dignissimos. Autem quos quo voluptate omnis ea.</p>
+        </div>
+
+        <div>
+            <h2>started to get all tag list 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iste nam, necessitatibus quo sapiente
+                est sunt illo, recusandae vero odio deserunt magnam praesentium vitae repellat.</p>
+        </div>
+
+        <ul>
+            <li>shafayet</li>
+            <li>bonobash</li>
+            <li>jalali set</li>
+            <li class="jsList">dom maro dom</li>
+            <li>new collection</li>
+        </ul>
+        <section class="food">
+            <h1 id="food-title">Food i love</h1>
+            <ul id="listing">
+                <li id="x">Rice</li>
+                <li class="jsList">potato</li>
+                <li class="jsList">fish</li>
+                <li class="jsList">Burgar</li>
+                <li class="jsList">lentils</li>
+                <li class="jsList">Pizza</li>
+                <li class="jsList">Mashroom</li>
+            </ul>
+        </section>
+        <section>
+            <ul class="findOutone xxxz">
+                <li class="rebu">dill</li>
+                <li class="debu">bill</li>
+                <li class="kebu">cill</li>
+                <li class="kebu">ill</li>
+                <li class="kebu">lelo</li>
+            </ul>
+        </section>
+
+        <section id="players-container">
+
+            <h1>players</h1>
+            <ul id="player-list">
+                <li>Messi</li>
+                <li>pele</li>
+                <li>Ronaldo</li>
+                <li>Embape</li>
+                <li>chele</li>
+            </ul>
+
+        </section>
+
+    </main>
+    <footer>
+        <div class="st1">
+            <p class="st2">
+                <span class="st3">
+                    <span class="st4">thank you !</span>
+                </span>
+            </p>
+        </div>
+    </footer>
+    <script>
+        const TraversEdge = document.querySelector('footer > .st1 > .st2 > .st3 .st4');
+        console.log('final round', TraversEdge.innerText);
+
+        console.log('document object model');
+        console.log('document object model');
+        //object er function k method bole
+        const student = {
+            name: 'Abdul mia',
+            id: 121,
+            study(subject) {
+                console.log('studying subject:', subject)
+
+            }
+        }
+        const liCollection = document.getElementsByTagName('li');
+        console.log(liCollection);
+        for (const lis of liCollection) {
+            console.log(lis.innerText);
+
+        }
+
+        const tryNewTag = document.getElementsByTagName('div');
+        console.log(tryNewTag);
+        for (const start of tryNewTag) {
+            // ata html tag soho ashbe
+            console.log('for innerHTML=', start.innerHTML);
+            // ata sudhu plain text ashbe
+            console.log('for innerText=', start.innerText);
+        }
+
+        const foodTitelH1 = document.getElementById('food-title');
+        console.log(foodTitelH1.innerText);
+        foodTitelH1.innerText = 'Khichuri Ranna khabo';
+        console.log(foodTitelH1.innerText);
+        // ------ text color,bg css style by javascript
+        foodTitelH1.style.color = '#F54927';
+        foodTitelH1.style.backgroundColor = '#4D3D3C';
+        foodTitelH1.style.padding = '30px';
+        foodTitelH1.style.textAlign = 'center';
+
+        // ................. access any class by id or class ----------
+        foodTitelH1.classList.add('bold');
+        foodTitelH1.classList.add('big');
+
+
+
+        // for ul ,li section-------------------------
+        const allProduct = document.getElementsByClassName('jsList');
+        for (elementOne of allProduct) {
+            console.log(elementOne.innerText);
+        }
+
+        const oneTry = document.getElementsByClassName('rebu');
+
+
+        console.log(oneTry);
+        // class thake data retrive korte hole for...of loop use korte hobe
+        for (const element of oneTry) {
+            console.log(element.innerText);
+
+
+        }
+        const findLs = document.querySelectorAll('.food  #listing .jsList');
+        console.log("Find list travarse", findLs);
+        for (const Ele of findLs) {
+            console.log('i got the values -', Ele.innerText);
+
+        }
+        const findLss = document.querySelectorAll('.food ul .jsList');
+        console.log("Find list travarse", findLs);
+        for (const Ele of findLss) {
+            console.log('i got the values 2 -', Ele.innerText);
+
+        }
+        const findLssNew = document.querySelectorAll('.food > ul > .jsList');
+        console.log("Find list travarse", findLs);
+        for (const Ele of findLssNew) {
+            console.log('i got the values 3 -', Ele.innerText);
+
+        }
+        const oneItem = document.querySelector('.findOutone .kebu');
+        console.log('hello-text:', oneItem.innerText);
+        const newItems = document.getElementById('x');
+        console.log('newItems', newItems);
+
+        // --------------make dynamic class list---------------
+        // --------------this class should be disappeared in html page---------------
+
+
+        const start = document.getElementById('listing');
+        console.log(start);
+        const classAdded = start.classList.add('bold');
+        const classFind = start.getAttribute('class');
+        console.log(classFind);
+        console.log(' mr.pritom');
+
+
+        // ---------------------video 24-8- node appendChild-----
+
+
+
+    </script>
+
+
+
+
+    <script src="js/child.js"></script>
+    <script src="js/append.js"></script>
+</body>
+
+</html>

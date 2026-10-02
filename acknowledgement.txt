@@ -1,0 +1,34 @@
+class,  JS er moddhe akadhik HTML element k ake shate call korte pare
+
+    e.g
+     <li class="jsList">Burgar</li>
+                <li class="jsList">lentils</li>
+                <li class="jsList">Pizza</li>
+                <li class="jsList">Mashroom</li>
+
+                    const allProduct=document.getElementsByClassName('jsList');  
+        for(elementOne of allProduct){             
+        console.log(elementOne.innerText);
+        }
+
+
+
+
+
+id,  JS er moddhe akti HTML element call korte pare
+
+e.g.
+   <li id="#firstItem">Burgar</li>
+        const firstFood=document.getElementById('firstItem');            
+        console.log(firstItem.innerText);
+
+
+------------------------------------------class vs. ID --------------------
+
+1. class thake data retrive korte hole for...of loop use korte hobe
+
+2.ID thake data retrive korte hole for...of loop use korte hobe na only console log korle colbe
+
+-------------------------------- web browser console------------------------
+
+ata te js practice korte hole KONO VABE RELOAD DEA JABE NA "
